@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import './App.scss';
+import { NavBar, Slider } from './components';
 
 function App() {
+  const [open, setOpen] = useState(false)
+
+  console.log(open)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar toggle={() => setOpen(!open)} />
+
+      {open && <div className="menu">
+        <Slider />
+        <div className="menu-link" to="#">Menu Item</div>
+        <div className="menu-link" to="#">Menu Item</div>
+      </div>}
     </div>
-  );
+  )
 }
 
 export default App;
