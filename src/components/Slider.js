@@ -8,24 +8,23 @@ import herstellen from "@/../../public/assets/herstellen.jpg"
 import medisch from "@/../../public/assets/medisch.jpg"
 import skien from "@/../../public/assets/skien.jpg"
 
-//TODO map
 
 
 export const Slider = () => {
   const items = [
-    { title: "Dagelijks", img: dagelijks },
-    { title: "Sport", img: sport },
-    { title: "Wandelen", img: wandelen },
-    { title: "Reizen", img: reizen },
-    { title: "Herstellen", img: herstellen },
-    { title: "Medisch", img: medisch },
-    { title: "Skiën", img: skien }
+    { id: 1, title: "Dagelijks", img: dagelijks },
+    { id: 2, title: "Sport", img: sport },
+    { id: 3, title: "Wandelen", img: wandelen },
+    { id: 4, title: "Reizen", img: reizen },
+    { id: 5, title: "Herstellen", img: herstellen },
+    { id: 6, title: "Medisch", img: medisch },
+    { id: 7, title: "Skiën", img: skien }
   ]
 
   return (
     <div className="slider">
       {items.map((i) =>
-        <SliderElement title={i.title} img={i.img} href={"#"} />
+        <SliderElement key={i.id} title={i.title} img={i.img} href={"#"} />
       )}
     </div>
   )

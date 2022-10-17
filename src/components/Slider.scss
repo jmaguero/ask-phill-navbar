@@ -1,12 +1,6 @@
 .slider {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: auto;
-  padding: 0;
-  padding-right: 0px;
-  position: relative;
-  z-index: 1;
+  overflow: scroll;
+  margin: 0 0.5em;
 }
