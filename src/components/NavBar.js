@@ -1,6 +1,8 @@
+import { MenuItem } from "./MenuItem"
 import "./NavBar.scss"
 
 export const NavBar = ({ toggle }) => {
+
   return (
     <div className="nav">
       <div className="hamburguer" onClick={toggle}>

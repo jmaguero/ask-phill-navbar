@@ -1,11 +1,24 @@
 import { useState } from 'react';
 import './App.scss';
-import { NavBar, Slider } from './components';
+import { MenuItem, NavBar, Slider } from './components';
 
 function App() {
   const [open, setOpen] = useState(false)
 
   console.log(open)
+
+  // const categories = [
+  //   {
+  //     category: "Daily",
+  //     type: [
+  //     ],
+  //   }]
+
+  const categories = [
+    { name: "Sports", items: [{ id: 1, name: "socks", quantity: 35 }, { id: 1, name: "socks", quantity: 35 }, { id: 1, name: "socks", quantity: 35 }] },
+    { name: "Sports", items: [{ id: 1, name: "socks", quantity: 35 }, { id: 1, name: "socks", quantity: 35 }, { id: 1, name: "socks", quantity: 35 }] },
+    { name: "Sports", items: [{ id: 1, name: "socks", quantity: 35 }, { id: 1, name: "socks", quantity: 35 }, { id: 1, name: "socks", quantity: 35 }] },
+  ]
 
   return (
     <div>
@@ -13,8 +26,8 @@ function App() {
 
       {open && <div className="menu">
         <Slider />
-        <div className="menu-link" to="#">Menu Item</div>
-        <div className="menu-link" to="#">Menu Item</div>
+
+        {categories.map(category => <MenuItem list={category} />)}
       </div>}
     </div>
   )
